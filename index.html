@@ -6,24 +6,27 @@
 
   <title>Ishq Majlis | Anwar Ali Hudavi Puliyakkode</title>
 
-  <meta name="description" content="Ishq Majlis - Shamsul Ulama Arabic College, Todaru UAE Samithi. An invitation for 13 September 2026 at Tamr Inn Hotel, Deira, Dubai.">
+  <meta
+    name="description"
+    content="Ishq Majlis - Shamsul Ulama Arabic College, Todaru UAE Samithi"
+  >
 
-  <meta name="theme-color" content="#062d21">
+  <meta name="theme-color" content="#031d15">
 
   <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700;800&display=swap');
 
     :root {
-      --green-1: #021a13;
-      --green-2: #043526;
-      --green-3: #07513d;
+      --green-dark: #01140e;
+      --green: #03291f;
+      --green-light: #064735;
       --gold: #d7b45a;
-      --gold-light: #f3d98a;
+      --gold-light: #f2d789;
       --cream: #f8f1df;
       --white: #ffffff;
-      --red: #8f1821;
-      --red-light: #bd2730;
-      --glass: rgba(255,255,255,0.07);
+      --red: #8e1720;
+      --red-dark: #5c0c14;
       --border: rgba(215,180,90,0.45);
     }
 
@@ -38,25 +41,24 @@
     }
 
     body {
-      font-family: "Manrope", "Noto Sans Kannada", sans-serif;
-      background: var(--green-1);
+      margin: 0;
+      background: var(--green-dark);
       color: var(--white);
+      font-family: "Manrope", "Noto Sans Kannada", sans-serif;
       overflow-x: hidden;
     }
 
-    /* =========================
-       GENERAL
-    ========================== */
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font-family: inherit;
+    }
 
     .page {
       width: 100%;
       overflow: hidden;
-    }
-
-    .section {
-      position: relative;
-      width: 100%;
-      padding: 90px 20px;
     }
 
     .container {
@@ -66,14 +68,17 @@
       z-index: 3;
     }
 
-    .gold {
-      color: var(--gold-light);
+    .section {
+      position: relative;
+      padding: 90px 20px;
     }
 
     .reveal {
       opacity: 0;
       transform: translateY(35px);
-      transition: opacity 1s ease, transform 1s ease;
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
     }
 
     .reveal.show {
@@ -87,29 +92,39 @@
 
     .hero {
       min-height: 100svh;
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 50px 20px 70px;
+      position: relative;
+      padding: 55px 20px 80px;
+
       background:
         linear-gradient(
           180deg,
-          rgba(0, 20, 14, 0.20),
-          rgba(1, 20, 14, 0.82)
+          rgba(0,18,12,0.25),
+          rgba(0,18,12,0.78)
         ),
-        url("hero-background.png") center center / cover no-repeat;
+        url("hero-background.png")
+        center center / cover no-repeat;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
+
       background:
-        radial-gradient(circle at 50% 30%, rgba(215,180,90,0.14), transparent 35%),
-        linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.72));
-      pointer-events: none;
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(215,180,90,0.13),
+          transparent 38%
+        ),
+        linear-gradient(
+          180deg,
+          transparent 50%,
+          rgba(0,0,0,0.72)
+        );
     }
 
     .hero::after {
@@ -118,52 +133,65 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 120px;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--green-1)
-      );
-      pointer-events: none;
+      height: 130px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          var(--green-dark)
+        );
     }
 
     .hero-content {
       width: min(900px, 100%);
       position: relative;
       z-index: 5;
-      animation: heroEnter 1.4s ease forwards;
+
+      animation:
+        heroAppear 1.4s ease forwards;
     }
 
-    @keyframes heroEnter {
+    @keyframes heroAppear {
+
       from {
         opacity: 0;
-        transform: translateY(35px) scale(0.98);
+        transform:
+          translateY(35px)
+          scale(0.97);
       }
+
       to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform:
+          translateY(0)
+          scale(1);
       }
+
     }
 
     .arabic-top {
       font-family: "Noto Naskh Arabic", serif;
-      font-size: clamp(30px, 8vw, 65px);
       color: var(--gold-light);
-      margin-bottom: 22px;
-      text-shadow: 0 0 25px rgba(215,180,90,0.28);
+      font-size: clamp(35px, 9vw, 70px);
       direction: rtl;
+      text-shadow:
+        0 0 25px rgba(215,180,90,0.3);
+      margin-bottom: 18px;
     }
 
-    .hero-line {
-      width: 90px;
+    .gold-line {
+      width: 100px;
       height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold),
-        transparent
-      );
       margin: 0 auto 25px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
     }
 
     .organization {
@@ -172,62 +200,70 @@
       font-size: clamp(15px, 4vw, 25px);
       line-height: 1.7;
       font-weight: 600;
-      max-width: 850px;
-      margin: auto;
     }
 
     .sponsor {
-      margin-top: 18px;
-      color: var(--gold-light);
+      margin-top: 15px;
+
       font-family: "Noto Sans Kannada", sans-serif;
       font-size: clamp(17px, 4vw, 28px);
-      font-weight: 600;
+      font-weight: 700;
+      color: var(--gold-light);
     }
 
     .hero-title {
       margin-top: 35px;
+
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(50px, 13vw, 105px);
-      line-height: 0.88;
-      font-weight: 700;
+      font-size: clamp(55px, 14vw, 110px);
+      line-height: 0.82;
       letter-spacing: 3px;
-      color: var(--gold-light);
       text-transform: uppercase;
+
+      color: var(--gold-light);
+
       text-shadow:
-        0 3px 30px rgba(0,0,0,0.55),
-        0 0 30px rgba(215,180,90,0.12);
+        0 5px 30px rgba(0,0,0,0.6);
     }
 
     .hero-subtitle {
-      margin-top: 20px;
+      margin-top: 25px;
+
       font-family: "Noto Sans Kannada", sans-serif;
-      font-size: clamp(20px, 5vw, 34px);
-      color: var(--cream);
+      font-size: clamp(18px, 4.5vw, 30px);
+      line-height: 1.5;
       font-weight: 700;
+
+      color: var(--cream);
     }
 
     .open-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       margin-top: 35px;
-      padding: 15px 28px;
+      padding: 15px 30px;
+
       border: 1px solid var(--gold);
       border-radius: 50px;
+
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+
       color: var(--gold-light);
       text-decoration: none;
-      font-weight: 700;
+
+      font-weight: 800;
       letter-spacing: 1px;
-      background: rgba(0,0,0,0.28);
-      backdrop-filter: blur(10px);
+
       transition: 0.35s ease;
     }
 
     .open-button:hover {
       background: var(--gold);
-      color: var(--green-1);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(215,180,90,0.22);
+      color: var(--green-dark);
+      transform: translateY(-4px);
     }
 
     /* =========================
@@ -236,87 +272,84 @@
 
     .intro {
       background:
-        radial-gradient(circle at 50% 0%, rgba(215,180,90,0.08), transparent 35%),
-        var(--green-1);
+        radial-gradient(
+          circle at center,
+          rgba(215,180,90,0.08),
+          transparent 45%
+        ),
+        var(--green-dark);
+
       text-align: center;
     }
 
     .ornament {
-      width: 150px;
-      height: 2px;
+      width: 160px;
+      height: 1px;
       margin: 0 auto 30px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold),
-        transparent
-      );
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+
       position: relative;
     }
 
     .ornament::after {
       content: "✦";
+
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -55%);
+
+      transform:
+        translate(-50%, -50%);
+
+      background: var(--green-dark);
+
       color: var(--gold-light);
-      background: var(--green-1);
+
       padding: 0 10px;
-      font-size: 18px;
     }
 
     .section-kannada {
       font-family: "Noto Sans Kannada", sans-serif;
+      color: var(--cream);
       font-size: clamp(20px, 5vw, 32px);
       line-height: 1.7;
       font-weight: 600;
     }
 
     .ishq-card {
+      max-width: 850px;
       margin: 35px auto 0;
-      max-width: 800px;
-      padding: 30px 22px;
+
+      padding: 30px 20px;
+
       border-radius: 28px;
+
       border: 1px solid var(--border);
+
       background:
         linear-gradient(
           135deg,
-          rgba(143,24,33,0.95),
-          rgba(91,12,20,0.95)
+          rgba(142,23,32,0.96),
+          rgba(92,12,20,0.96)
         );
-      box-shadow:
-        0 20px 60px rgba(0,0,0,0.3),
-        inset 0 0 40px rgba(215,180,90,0.06);
-      position: relative;
-      overflow: hidden;
-    }
 
-    .ishq-card::before {
-      content: "";
-      position: absolute;
-      inset: 8px;
-      border: 1px solid rgba(215,180,90,0.3);
-      border-radius: 22px;
-      pointer-events: none;
+      box-shadow:
+        0 25px 65px rgba(0,0,0,0.35);
     }
 
     .ishq-title {
       font-family: "Noto Sans Kannada", sans-serif;
-      font-size: clamp(28px, 7vw, 50px);
-      color: var(--white);
+      font-size: clamp(25px, 7vw, 48px);
+      line-height: 1.5;
       font-weight: 800;
-      position: relative;
-      z-index: 2;
-    }
-
-    .ishq-small {
-      margin-top: 10px;
-      color: var(--gold-light);
-      font-family: "Noto Sans Kannada", sans-serif;
-      font-size: clamp(15px, 4vw, 22px);
-      position: relative;
-      z-index: 2;
+      color: var(--white);
     }
 
     /* =========================
@@ -327,53 +360,67 @@
       background:
         linear-gradient(
           180deg,
-          var(--green-1),
-          var(--green-2)
+          var(--green-dark),
+          var(--green)
         );
     }
 
     .guest-wrapper {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 45px;
+      gap: 55px;
       align-items: center;
     }
 
     .guest-photo-wrap {
-      position: relative;
-      width: min(440px, 90%);
+      width: min(430px, 90%);
       margin: auto;
+      position: relative;
     }
 
     .guest-photo-wrap::before {
       content: "";
+
       position: absolute;
-      inset: -14px;
-      border: 1px solid var(--gold);
-      border-radius: 40px;
+      inset: -13px;
+
+      border:
+        1px solid var(--gold);
+
+      border-radius: 38px;
+
       transform: rotate(3deg);
-      opacity: 0.7;
+
+      opacity: 0.75;
     }
 
     .guest-photo-wrap::after {
       content: "";
+
       position: absolute;
-      inset: -25px;
-      border: 1px solid rgba(215,180,90,0.2);
+      inset: -24px;
+
+      border:
+        1px solid rgba(215,180,90,0.22);
+
       border-radius: 45px;
+
       transform: rotate(-3deg);
     }
 
     .guest-photo {
-      display: block;
       width: 100%;
-      border-radius: 32px;
+      display: block;
+
+      border-radius: 30px;
+
       position: relative;
       z-index: 2;
+
       object-fit: cover;
+
       box-shadow:
-        0 30px 80px rgba(0,0,0,0.55),
-        0 0 40px rgba(215,180,90,0.08);
+        0 30px 80px rgba(0,0,0,0.55);
     }
 
     .guest-info {
@@ -382,17 +429,16 @@
 
     .guest-label {
       color: var(--gold-light);
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 4px;
-      text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 18px;
     }
 
     .guest-name {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(48px, 12vw, 88px);
-      line-height: 0.9;
+      font-size: clamp(50px, 13vw, 90px);
+      line-height: 0.85;
       font-weight: 700;
       color: var(--gold-light);
       text-transform: uppercase;
@@ -404,87 +450,100 @@
 
     .guest-name .last {
       color: var(--cream);
-      font-size: 0.72em;
-      margin-top: 15px;
+      font-size: 0.70em;
+      margin-top: 16px;
       letter-spacing: 3px;
     }
 
     /* =========================
-       EVENT DETAILS
+       EVENT
     ========================== */
 
     .event-section {
       background:
-        radial-gradient(circle at 50% 50%, rgba(215,180,90,0.07), transparent 45%),
-        var(--green-2);
+        radial-gradient(
+          circle at center,
+          rgba(215,180,90,0.07),
+          transparent 45%
+        ),
+        var(--green);
+      text-align: center;
     }
 
     .event-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 18px;
       margin-top: 45px;
     }
 
     .event-card {
-      padding: 30px 22px;
-      border: 1px solid var(--border);
+      padding: 30px 20px;
+
+      border:
+        1px solid var(--border);
+
       border-radius: 25px;
-      background: rgba(0,0,0,0.18);
-      backdrop-filter: blur(8px);
-      text-align: center;
-      transition: 0.4s ease;
+
+      background:
+        rgba(0,0,0,0.18);
+
+      backdrop-filter:
+        blur(8px);
+
+      transition: 0.35s ease;
     }
 
     .event-card:hover {
       transform: translateY(-6px);
       border-color: var(--gold);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
     }
 
     .event-icon {
-      font-size: 30px;
+      font-size: 28px;
+      color: var(--gold);
       margin-bottom: 15px;
     }
 
     .event-label {
-      font-size: 12px;
-      letter-spacing: 3px;
       color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
       font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .event-value {
       color: var(--cream);
       font-family: "Noto Sans Kannada", sans-serif;
-      font-size: clamp(19px, 4vw, 27px);
-      line-height: 1.6;
-      font-weight: 600;
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 700;
     }
 
     .date-number {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(55px, 14vw, 95px);
+      font-size: clamp(60px, 15vw, 100px);
       line-height: 0.8;
-      color: var(--gold-light);
       font-weight: 700;
+      color: var(--gold-light);
     }
 
     .date-month {
       font-family: "Cormorant Garamond", serif;
+      color: var(--cream);
       font-size: 35px;
       letter-spacing: 5px;
-      color: var(--cream);
       margin-top: 8px;
     }
 
     .date-year {
-      font-size: 20px;
-      letter-spacing: 5px;
       color: var(--gold);
-      margin-top: 4px;
+      font-size: 19px;
+      letter-spacing: 5px;
+      margin-top: 5px;
     }
 
     /* =========================
@@ -492,52 +551,55 @@
     ========================== */
 
     .countdown-section {
-      padding-top: 75px;
-      padding-bottom: 75px;
-      background: var(--green-1);
+      background: var(--green-dark);
       text-align: center;
     }
 
     .countdown-title {
       font-family: "Cormorant Garamond", serif;
       color: var(--gold-light);
-      font-size: clamp(40px, 9vw, 65px);
+      font-size: clamp(42px, 10vw, 68px);
       margin-bottom: 35px;
     }
 
     .countdown {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2,1fr);
       gap: 12px;
-      max-width: 650px;
+      max-width: 680px;
       margin: auto;
     }
 
     .time-box {
-      border: 1px solid var(--border);
+      padding: 22px 10px;
+
+      border:
+        1px solid var(--border);
+
       border-radius: 20px;
-      padding: 20px 10px;
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.07),
-        rgba(0,0,0,0.2)
-      );
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.06),
+          rgba(0,0,0,0.2)
+        );
     }
 
     .time-number {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(45px, 11vw, 72px);
-      font-weight: 700;
       color: var(--gold-light);
+      font-size: clamp(45px, 12vw, 75px);
       line-height: 1;
+      font-weight: 700;
     }
 
     .time-label {
       margin-top: 8px;
       color: var(--cream);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 2px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     /* =========================
@@ -548,8 +610,8 @@
       background:
         linear-gradient(
           180deg,
-          var(--green-2),
-          var(--green-1)
+          var(--green),
+          var(--green-dark)
         );
       text-align: center;
     }
@@ -557,31 +619,32 @@
     .venue-box {
       max-width: 900px;
       margin: 35px auto 0;
-      padding: 40px 22px;
+
+      padding: 40px 20px;
+
+      border:
+        1px solid var(--border);
+
       border-radius: 30px;
-      border: 1px solid var(--border);
+
       background:
-        linear-gradient(
-          145deg,
-          rgba(215,180,90,0.07),
-          rgba(0,0,0,0.22)
-        );
+        rgba(0,0,0,0.20);
     }
 
     .venue-title {
-      color: var(--gold-light);
       font-family: "Cormorant Garamond", serif;
-      font-size: 35px;
+      color: var(--gold-light);
+      font-size: 40px;
       margin-bottom: 25px;
     }
 
     .venue-line {
       font-family: "Noto Sans Kannada", sans-serif;
       color: var(--cream);
-      font-size: clamp(18px, 4.5vw, 28px);
+      font-size: clamp(17px, 4.5vw, 28px);
       line-height: 1.8;
       font-weight: 600;
-      margin: 8px 0;
+      margin: 7px 0;
     }
 
     .venue-line.english {
@@ -589,50 +652,183 @@
     }
 
     /* =========================
-       INVITATION
+       INVITATION PERSONALIZATION
     ========================== */
 
     .invitation-section {
-      text-align: center;
       background:
-        radial-gradient(circle at center, rgba(215,180,90,0.08), transparent 45%),
-        var(--green-1);
-      padding-top: 100px;
+        radial-gradient(
+          circle at center,
+          rgba(215,180,90,0.09),
+          transparent 45%
+        ),
+        var(--green-dark);
+
+      text-align: center;
+
+      padding-top: 105px;
       padding-bottom: 110px;
     }
 
     .invited {
       font-family: "Cormorant Garamond", serif;
+      font-size: clamp(55px, 14vw, 105px);
+      line-height: 0.9;
       font-style: italic;
-      font-size: clamp(55px, 13vw, 100px);
-      line-height: 1;
       color: var(--gold-light);
-      text-shadow: 0 10px 35px rgba(0,0,0,0.35);
+
+      text-shadow:
+        0 10px 35px rgba(0,0,0,0.35);
     }
 
     .invite-sub {
       margin-top: 20px;
-      font-family: "Manrope", sans-serif;
       color: var(--cream);
-      font-size: 14px;
-      letter-spacing: 4px;
+      font-size: 13px;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    .to-line {
-      margin: 40px auto 0;
-      width: min(850px, 100%);
+    .personal-card {
+      width: min(650px, 100%);
+      margin: 45px auto 0;
+
+      padding: 30px 20px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.055),
+          rgba(0,0,0,0.22)
+        );
+
+      box-shadow:
+        0 25px 60px rgba(0,0,0,0.25);
+
       text-align: left;
-      color: var(--cream);
-      font-size: 21px;
-      padding: 0 10px;
     }
 
-    .line {
+    .field-label {
       display: block;
-      height: 1px;
-      background: rgba(248,241,223,0.65);
-      margin-top: 18px;
+
+      color: var(--gold-light);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 9px;
+    }
+
+    .field-input {
+      width: 100%;
+
+      padding: 16px 16px;
+
+      border:
+        1px solid rgba(215,180,90,0.35);
+
+      border-radius: 14px;
+
+      background:
+        rgba(0,0,0,0.28);
+
+      color: var(--white);
+
+      outline: none;
+
+      font-family:
+        "Manrope",
+        "Noto Sans Kannada",
+        sans-serif;
+
+      font-size: 16px;
+
+      transition: 0.3s ease;
+
+      margin-bottom: 22px;
+    }
+
+    .field-input::placeholder {
+      color: rgba(248,241,223,0.45);
+    }
+
+    .field-input:focus {
+      border-color: var(--gold);
+      box-shadow:
+        0 0 0 3px rgba(215,180,90,0.08);
+    }
+
+    .invite-preview {
+      display: none;
+
+      margin: 5px 0 22px;
+
+      padding: 18px;
+
+      border-left:
+        2px solid var(--gold);
+
+      background:
+        rgba(215,180,90,0.05);
+
+      color: var(--cream);
+
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .send-button {
+      width: 100%;
+
+      min-height: 56px;
+
+      border: none;
+      border-radius: 50px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold)
+        );
+
+      color: var(--green-dark);
+
+      font-size: 15px;
+      font-weight: 900;
+
+      letter-spacing: 0.5px;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .send-button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 15px 35px rgba(215,180,90,0.2);
+    }
+
+    .send-note {
+      margin-top: 13px;
+
+      text-align: center;
+
+      color: rgba(248,241,223,0.55);
+
+      font-size: 11px;
+      line-height: 1.6;
     }
 
     /* =========================
@@ -643,63 +839,80 @@
       background:
         linear-gradient(
           135deg,
-          #071f17,
-          #042c21
+          #061f17,
+          #03291f
         );
+
       text-align: center;
     }
 
     .rsvp-card {
       max-width: 750px;
       margin: auto;
+
       padding: 45px 22px;
+
+      border:
+        1px solid var(--border);
+
       border-radius: 32px;
-      border: 1px solid var(--border);
+
       background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.06),
-          rgba(0,0,0,0.22)
-        );
+        rgba(255,255,255,0.045);
     }
 
     .rsvp-title {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(48px, 10vw, 75px);
       color: var(--gold-light);
+      font-size: clamp(50px, 11vw, 78px);
     }
 
     .rsvp-text {
-      margin: 15px auto 30px;
-      color: var(--cream);
-      line-height: 1.8;
       max-width: 600px;
+      margin: 15px auto 30px;
+
+      color: var(--cream);
+
+      line-height: 1.8;
     }
 
     .whatsapp-button {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
       gap: 10px;
+
       padding: 17px 30px;
+
+      border:
+        1px solid var(--gold);
+
       border-radius: 50px;
-      border: 1px solid var(--gold);
+
       background: var(--gold);
-      color: var(--green-1);
+
+      color: var(--green-dark);
+
       text-decoration: none;
-      font-weight: 800;
+
+      font-weight: 900;
+
       transition: 0.35s ease;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
     }
 
     .whatsapp-button:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 18px 45px rgba(215,180,90,0.22);
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 15px 40px rgba(215,180,90,0.2);
     }
 
     .whatsapp-number {
-      margin-top: 17px;
+      margin-top: 16px;
+
       color: var(--gold-light);
+
       font-size: 14px;
       letter-spacing: 1px;
     }
@@ -709,36 +922,42 @@
     ========================== */
 
     .share-section {
-      background: var(--green-1);
+      background: var(--green-dark);
       text-align: center;
       padding: 70px 20px;
     }
 
     .share-title {
-      color: var(--cream);
       font-family: "Cormorant Garamond", serif;
-      font-size: 42px;
+      color: var(--cream);
+      font-size: 43px;
       margin-bottom: 25px;
     }
 
     .share-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 28px;
-      border: 1px solid var(--gold);
+      padding: 15px 30px;
+
+      border:
+        1px solid var(--gold);
+
       border-radius: 50px;
+
       background: transparent;
+
       color: var(--gold-light);
+
+      font-size: 14px;
+      font-weight: 800;
+
       cursor: pointer;
-      font-family: "Manrope", sans-serif;
-      font-weight: 700;
+
       transition: 0.35s ease;
     }
 
     .share-button:hover {
       background: var(--gold);
-      color: var(--green-1);
+      color: var(--green-dark);
+
       transform: translateY(-3px);
     }
 
@@ -747,50 +966,58 @@
     ========================== */
 
     footer {
-      position: relative;
       text-align: center;
+
       padding: 55px 20px 35px;
+
       background:
         linear-gradient(
           180deg,
           #031c15,
-          #01110c
+          #01100b
         );
-      border-top: 1px solid rgba(215,180,90,0.25);
+
+      border-top:
+        1px solid rgba(215,180,90,0.25);
     }
 
     .footer-arabic {
       font-family: "Noto Naskh Arabic", serif;
-      color: var(--gold);
-      font-size: 25px;
-      margin-bottom: 15px;
       direction: rtl;
+
+      color: var(--gold);
+
+      font-size: 26px;
+      margin-bottom: 12px;
     }
 
     .footer-title {
       font-family: "Cormorant Garamond", serif;
-      font-size: 32px;
       color: var(--gold-light);
+      font-size: 34px;
+    }
+
+    .footer-line {
+      width: 180px;
+      height: 1px;
+
+      margin: 23px auto;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
     }
 
     .footer-small {
-      margin-top: 15px;
-      color: rgba(248,241,223,0.65);
-      font-size: 12px;
-      line-height: 1.8;
-    }
+      color: rgba(248,241,223,0.6);
 
-    .gold-border {
-      width: 100%;
-      max-width: 500px;
-      height: 1px;
-      margin: 25px auto;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold),
-        transparent
-      );
+      font-size: 11px;
+
+      line-height: 1.8;
     }
 
     /* =========================
@@ -799,32 +1026,49 @@
 
     .floating-whatsapp {
       position: fixed;
+
       right: 18px;
       bottom: 18px;
+
       width: 58px;
       height: 58px;
+
       border-radius: 50%;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       background: var(--gold);
-      color: var(--green-1);
+
+      color: var(--green-dark);
+
       text-decoration: none;
+
       font-size: 25px;
-      font-weight: 900;
+
       z-index: 1000;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
-      border: 2px solid rgba(255,255,255,0.45);
-      animation: floatPulse 2.5s infinite;
+
+      border:
+        2px solid rgba(255,255,255,0.45);
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.35);
+
+      animation:
+        pulse 2.5s infinite;
     }
 
-    @keyframes floatPulse {
+    @keyframes pulse {
+
       0%, 100% {
         transform: scale(1);
       }
+
       50% {
         transform: scale(1.06);
       }
+
     }
 
     /* =========================
@@ -838,7 +1082,10 @@
       }
 
       .guest-wrapper {
-        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-columns:
+          0.9fr
+          1.1fr;
+
         gap: 80px;
       }
 
@@ -851,20 +1098,19 @@
       }
 
       .event-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+          repeat(3, 1fr);
       }
 
       .countdown {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns:
+          repeat(4, 1fr);
       }
 
       .time-box {
         padding: 30px 12px;
       }
 
-      .hero {
-        min-height: 100vh;
-      }
     }
 
     @media (min-width: 1100px) {
@@ -874,29 +1120,25 @@
         padding-right: 70px;
       }
 
-      .guest-photo-wrap {
-        width: 430px;
-      }
     }
 
-    /* =========================
-       REDUCED MOTION
-    ========================== */
-
     @media (prefers-reduced-motion: reduce) {
+
       *,
       *::before,
       *::after {
-        scroll-behavior: auto !important;
         animation: none !important;
         transition: none !important;
+        scroll-behavior: auto !important;
       }
 
       .reveal {
         opacity: 1;
         transform: none;
       }
+
     }
+
   </style>
 </head>
 
@@ -905,7 +1147,7 @@
 <div class="page">
 
   <!-- =========================
-       HERO / HOMEPAGE
+       HOMEPAGE
   ========================== -->
 
   <section class="hero" id="home">
@@ -916,7 +1158,7 @@
         ﷺ
       </div>
 
-      <div class="hero-line"></div>
+      <div class="gold-line"></div>
 
       <div class="organization">
         ಶಂಸುಲ್ ಉಲಮಾ ಅರಬಿಕ್ ಕಾಲೇಜು, ತೋಡಾರು ಯು.ಏ. ಈ ಸಮಿತಿ
@@ -935,7 +1177,10 @@
         ಇಷ್ಕ್ ಮಜ್ಲಿಸ್ ಮತ್ತು ಶಂಸುಲ್ ಉಲಮಾ ಆಂಡ್
       </div>
 
-      <a href="#guest" class="open-button">
+      <a
+        href="#guest"
+        class="open-button"
+      >
         OPEN INVITATION
       </a>
 
@@ -945,7 +1190,7 @@
 
 
   <!-- =========================
-       EVENT INTRO
+       INTRO
   ========================== -->
 
   <section class="section intro">
@@ -975,7 +1220,10 @@
        CHIEF GUEST
   ========================== -->
 
-  <section class="section guest-section" id="guest">
+  <section
+    class="section guest-section"
+    id="guest"
+  >
 
     <div class="container">
 
@@ -985,12 +1233,11 @@
 
           <img
             src="guest-photo.png"
-            alt="Anwar Ali Hudavi Puliyakkode"
+            alt="ANWAR ALI HUDAVI PULIYAKKODE"
             class="guest-photo"
           >
 
         </div>
-
 
         <div class="guest-info reveal">
 
@@ -1031,8 +1278,6 @@
 
       <div class="event-grid">
 
-        <!-- DATE -->
-
         <div class="event-card">
 
           <div class="event-icon">
@@ -1058,8 +1303,6 @@
         </div>
 
 
-        <!-- DAY -->
-
         <div class="event-card">
 
           <div class="event-icon">
@@ -1076,8 +1319,6 @@
 
         </div>
 
-
-        <!-- TIME -->
 
         <div class="event-card">
 
@@ -1117,23 +1358,55 @@
       <div class="countdown">
 
         <div class="time-box">
-          <div class="time-number" id="days">00</div>
-          <div class="time-label">DAYS</div>
+          <div
+            class="time-number"
+            id="days"
+          >
+            00
+          </div>
+
+          <div class="time-label">
+            DAYS
+          </div>
         </div>
 
         <div class="time-box">
-          <div class="time-number" id="hours">00</div>
-          <div class="time-label">HOURS</div>
+          <div
+            class="time-number"
+            id="hours"
+          >
+            00
+          </div>
+
+          <div class="time-label">
+            HOURS
+          </div>
         </div>
 
         <div class="time-box">
-          <div class="time-number" id="minutes">00</div>
-          <div class="time-label">MINUTES</div>
+          <div
+            class="time-number"
+            id="minutes"
+          >
+            00
+          </div>
+
+          <div class="time-label">
+            MINUTES
+          </div>
         </div>
 
         <div class="time-box">
-          <div class="time-number" id="seconds">00</div>
-          <div class="time-label">SECONDS</div>
+          <div
+            class="time-number"
+            id="seconds"
+          >
+            00
+          </div>
+
+          <div class="time-label">
+            SECONDS
+          </div>
         </div>
 
       </div>
@@ -1175,10 +1448,13 @@
 
 
   <!-- =========================
-       INVITATION
+       PERSONAL INVITATION
   ========================== -->
 
-  <section class="section invitation-section">
+  <section
+    class="section invitation-section"
+    id="invitation"
+  >
 
     <div class="container reveal">
 
@@ -1192,11 +1468,68 @@
         A Special Invitation
       </div>
 
-      <div class="to-line">
 
-        <strong>To</strong>
+      <div class="personal-card">
 
-        <span class="line"></span>
+        <!-- NAME -->
+
+        <label
+          class="field-label"
+          for="guestName"
+        >
+          INVITATION TO
+        </label>
+
+        <input
+          type="text"
+          id="guestName"
+          class="field-input"
+          placeholder="Enter guest name"
+          autocomplete="name"
+        >
+
+
+        <!-- WHATSAPP NUMBER -->
+
+        <label
+          class="field-label"
+          for="guestNumber"
+        >
+          GUEST WHATSAPP NUMBER
+        </label>
+
+        <input
+          type="tel"
+          id="guestNumber"
+          class="field-input"
+          placeholder="Enter WhatsApp number"
+          inputmode="tel"
+          autocomplete="tel"
+        >
+
+
+        <!-- PREVIEW -->
+
+        <div
+          class="invite-preview"
+          id="invitePreview"
+        ></div>
+
+
+        <!-- SEND -->
+
+        <button
+          type="button"
+          class="send-button"
+          onclick="sendPersonalInvitation()"
+        >
+          💬 SEND INVITATION ON WHATSAPP
+        </button>
+
+        <div class="send-note">
+          Enter the guest's name and WhatsApp number.
+          The personalized invitation will open directly in WhatsApp.
+        </div>
 
       </div>
 
@@ -1209,7 +1542,10 @@
        RSVP
   ========================== -->
 
-  <section class="section rsvp-section" id="rsvp">
+  <section
+    class="section rsvp-section"
+    id="rsvp"
+  >
 
     <div class="container">
 
@@ -1229,8 +1565,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>💬</span>
-          RSVP ON WHATSAPP
+          💬 RSVP ON WHATSAPP
         </a>
 
         <div class="whatsapp-number">
@@ -1257,6 +1592,7 @@
       </div>
 
       <button
+        type="button"
         class="share-button"
         onclick="shareInvitation()"
       >
@@ -1282,12 +1618,18 @@
       Ishq Majlis
     </div>
 
-    <div class="gold-border"></div>
+    <div class="footer-line"></div>
 
     <div class="footer-small">
-      ANWAR ALI HUDAVI PULIYAKKODE<br>
-      13 SEP 2026 · SUNDAY · 6:00 PM<br>
+
+      ANWAR ALI HUDAVI PULIYAKKODE
+      <br>
+
+      13 SEP 2026 · SUNDAY · 6:00 PM
+      <br>
+
       Tamr Inn Hotel, Deira, Dubai
+
     </div>
 
   </footer>
@@ -1299,10 +1641,10 @@
 
   <a
     class="floating-whatsapp"
-    href="https://wa.me/919632644522?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20Ishq%20Majlis."
+    href="https://wa.me/919632644522?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20know%20more%20about%20Ishq%20Majlis."
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Contact on WhatsApp"
+    aria-label="WhatsApp"
   >
     💬
   </a>
@@ -1312,125 +1654,455 @@
 
 <script>
 
-  /* =========================
-     COUNTDOWN
-  ========================== */
+  /* ==================================================
+     EVENT COUNTDOWN
+  ================================================== */
 
-  const eventDate = new Date("September 13, 2026 18:00:00").getTime();
+  const eventDate =
+    new Date(
+      "September 13, 2026 18:00:00"
+    ).getTime();
+
 
   function updateCountdown() {
 
-    const now = new Date().getTime();
-    const distance = eventDate - now;
+    const now =
+      new Date().getTime();
+
+    const distance =
+      eventDate - now;
+
 
     if (distance <= 0) {
 
-      document.getElementById("days").textContent = "00";
-      document.getElementById("hours").textContent = "00";
-      document.getElementById("minutes").textContent = "00";
-      document.getElementById("seconds").textContent = "00";
+      document.getElementById("days")
+        .textContent = "00";
+
+      document.getElementById("hours")
+        .textContent = "00";
+
+      document.getElementById("minutes")
+        .textContent = "00";
+
+      document.getElementById("seconds")
+        .textContent = "00";
 
       return;
     }
 
-    const days = Math.floor(
-      distance / (1000 * 60 * 60 * 24)
-    );
 
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24))
-      / (1000 * 60 * 60)
-    );
+    const days =
+      Math.floor(
+        distance /
+        (1000 * 60 * 60 * 24)
+      );
 
-    const minutes = Math.floor(
-      (distance % (1000 * 60 * 60))
-      / (1000 * 60)
-    );
 
-    const seconds = Math.floor(
-      (distance % (1000 * 60))
-      / 1000
-    );
+    const hours =
+      Math.floor(
+        (distance %
+        (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
 
-    document.getElementById("days").textContent =
+
+    const minutes =
+      Math.floor(
+        (distance %
+        (1000 * 60 * 60)) /
+        (1000 * 60)
+      );
+
+
+    const seconds =
+      Math.floor(
+        (distance %
+        (1000 * 60)) /
+        1000
+      );
+
+
+    document.getElementById("days")
+      .textContent =
       String(days).padStart(2, "0");
 
-    document.getElementById("hours").textContent =
+
+    document.getElementById("hours")
+      .textContent =
       String(hours).padStart(2, "0");
 
-    document.getElementById("minutes").textContent =
+
+    document.getElementById("minutes")
+      .textContent =
       String(minutes).padStart(2, "0");
 
-    document.getElementById("seconds").textContent =
+
+    document.getElementById("seconds")
+      .textContent =
       String(seconds).padStart(2, "0");
+
   }
+
 
   updateCountdown();
 
-  setInterval(updateCountdown, 1000);
+  setInterval(
+    updateCountdown,
+    1000
+  );
 
 
-  /* =========================
-     SCROLL ANIMATIONS
-  ========================== */
+  /* ==================================================
+     PERSONALIZED WHATSAPP INVITATION
+  ================================================== */
 
-  const observer = new IntersectionObserver(
-    (entries) => {
+  function sendPersonalInvitation() {
 
-      entries.forEach((entry) => {
+    const nameInput =
+      document.getElementById("guestName");
 
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+    const numberInput =
+      document.getElementById("guestNumber");
 
-      });
 
-    },
-    {
-      threshold: 0.12
+    const name =
+      nameInput.value.trim();
+
+    let number =
+      numberInput.value.trim();
+
+
+    if (!name) {
+
+      alert(
+        "Please enter the guest name."
+      );
+
+      nameInput.focus();
+
+      return;
+    }
+
+
+    if (!number) {
+
+      alert(
+        "Please enter the guest WhatsApp number."
+      );
+
+      numberInput.focus();
+
+      return;
+    }
+
+
+    /*
+      Remove spaces, brackets,
+      hyphens and other symbols.
+    */
+
+    number =
+      number.replace(
+        /[^\d+]/g,
+        ""
+      );
+
+
+    /*
+      If the user enters an Indian
+      10-digit mobile number, automatically
+      add India's +91 country code.
+    */
+
+    if (
+      number.length === 10 &&
+      /^[6-9]\d{9}$/.test(number)
+    ) {
+
+      number =
+        "91" + number;
+
+    }
+    else {
+
+      number =
+        number.replace(
+          /^\+/,
+          ""
+        );
+
+    }
+
+
+    /*
+      Basic validation.
+    */
+
+    if (
+      number.length < 10 ||
+      number.length > 15
+    ) {
+
+      alert(
+        "Please enter a valid WhatsApp number with country code."
+      );
+
+      numberInput.focus();
+
+      return;
+    }
+
+
+    /*
+      IMPORTANT:
+      This is the website URL.
+      When the website is hosted,
+      window.location.href becomes
+      the actual invitation link.
+    */
+
+    const invitationLink =
+      window.location.href;
+
+
+    /*
+      Personalized invitation message.
+    */
+
+    const message =
+
+`Assalamu Alaikum ${name},
+
+You are invited as a special guest to
+
+ISHQ MAJLIS
+
+Chief Guest:
+ANWAR ALI HUDAVI
+PULIYAKKODE
+
+Date: 13 September 2026
+Day: Sunday
+Time: 6:00 PM
+
+Venue:
+Tamr Inn Hotel, Deira, Dubai
+
+You are specially invited to be part of this gathering.
+
+Invitation for ${name}:
+${invitationLink}
+
+We look forward to welcoming you.
+
+— Ishq Majlis`;
+
+
+    /*
+      Encode the message so WhatsApp
+      can read it correctly.
+    */
+
+    const whatsappURL =
+      "https://wa.me/" +
+      number +
+      "?text=" +
+      encodeURIComponent(message);
+
+
+    /*
+      Open WhatsApp.
+      On mobile this normally opens
+      the WhatsApp app; otherwise it
+      can open WhatsApp Web.
+    */
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+  }
+
+
+  /* ==================================================
+     LIVE PERSONALIZED PREVIEW
+  ================================================== */
+
+  const guestNameInput =
+    document.getElementById("guestName");
+
+  const preview =
+    document.getElementById("invitePreview");
+
+
+  guestNameInput.addEventListener(
+    "input",
+    function () {
+
+      const name =
+        this.value.trim();
+
+
+      if (!name) {
+
+        preview.style.display =
+          "none";
+
+        preview.innerHTML =
+          "";
+
+        return;
+      }
+
+
+      preview.style.display =
+        "block";
+
+
+      preview.innerHTML =
+
+        "You are invited as a " +
+        "<strong>Special Guest</strong>, " +
+        "<strong>" +
+        escapeHTML(name) +
+        "</strong>.";
+
     }
   );
 
 
-  document
-    .querySelectorAll(".reveal")
-    .forEach((element) => observer.observe(element));
+  /* ==================================================
+     SAFE TEXT DISPLAY
+  ================================================== */
+
+  function escapeHTML(text) {
+
+    return text
+      .replace(
+        /&/g,
+        "&amp;"
+      )
+      .replace(
+        /</g,
+        "&lt;"
+      )
+      .replace(
+        />/g,
+        "&gt;"
+      )
+      .replace(
+        /"/g,
+        "&quot;"
+      )
+      .replace(
+        /'/g,
+        "&#039;"
+      );
+
+  }
 
 
-  /* =========================
-     SHARE
-  ========================== */
+  /* ==================================================
+     WEBSITE SHARE
+  ================================================== */
 
   async function shareInvitation() {
 
     const shareData = {
-      title: "Ishq Majlis",
+
+      title:
+        "Ishq Majlis",
+
       text:
         "You are invited to Ishq Majlis with Chief Guest Anwar Ali Hudavi Puliyakkode on 13 September 2026 at 6:00 PM, Tamr Inn Hotel, Deira, Dubai.",
-      url: window.location.href
+
+      url:
+        window.location.href
+
     };
+
 
     try {
 
-      if (navigator.share) {
+      if (
+        navigator.share
+      ) {
 
-        await navigator.share(shareData);
+        await navigator.share(
+          shareData
+        );
 
-      } else {
+      }
+      else {
 
-        await navigator.clipboard.writeText(window.location.href);
+        await navigator.clipboard.writeText(
+          window.location.href
+        );
 
-        alert("Invitation link copied!");
+        alert(
+          "Invitation link copied!"
+        );
 
       }
 
-    } catch (error) {
+    }
+    catch (error) {
 
-      console.log("Share cancelled.");
+      console.log(
+        "Share cancelled."
+      );
 
     }
 
   }
+
+
+  /* ==================================================
+     SCROLL REVEAL ANIMATION
+  ================================================== */
+
+  const observer =
+    new IntersectionObserver(
+
+      function(entries) {
+
+        entries.forEach(
+          function(entry) {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "show"
+              );
+
+            }
+
+          }
+        );
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+
+  document
+    .querySelectorAll(".reveal")
+    .forEach(
+      function(element) {
+
+        observer.observe(
+          element
+        );
+
+      }
+    );
 
 </script>
 
